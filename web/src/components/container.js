@@ -1,0 +1,7 @@
+import React from "react";
+
+const Container = ({ children }) => {
+  return <div className={styles.root}>{children}</div>;
+};
+
+export default Container;
