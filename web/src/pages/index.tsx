@@ -14,54 +14,6 @@ import Layout from "../components/Layout";
 import ButtonCards from "../components/ButtonCards";
 import SEO from "../components/Seo";
 
-export const query = graphql`
-  query IndexPageQuery {
-    site: sanitySiteSettings(_id: { regex: "/(drafts.|)siteSettings/" }) {
-      title
-      description
-      keywords
-    }
-    projects: allSanitySampleProject(
-      limit: 6
-      sort: { fields: [publishedAt], order: DESC }
-      filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
-    ) {
-      edges {
-        node {
-          id
-          mainImage {
-            crop {
-              _key
-              _type
-              top
-              bottom
-              left
-              right
-            }
-            hotspot {
-              _key
-              _type
-              x
-              y
-              height
-              width
-            }
-            asset {
-              _id
-            }
-            alt
-          }
-          title
-          _rawExcerpt
-          slug {
-            current
-          }
-        }
-      }
-    }
-  }
-`;
-
 const ButtonsData = [
   {
     title: "Become Out Volunteer",
@@ -111,7 +63,9 @@ const IndexPage = (props) => {
     <div>
       <SEO title={site.title} description={site.description}  />
       <Container>
-        <PageHeader bg={data?.header?.childImageSharp?.fluid.src}>
+        <PageHeader 
+        bg={data?.header?.childImageSharp?.fluid.src}
+        >
           <Title>
             <h3>Join Us</h3>
             <h1>We Need Your Help</h1>
@@ -171,13 +125,7 @@ const IndexPage = (props) => {
             </Bottom>
           </Wufaw>
         </Detail>
-        {/* {projectNodes && (
-          <ProjectPreviewGrid
-            title="Latest projects"
-            nodes={projectNodes}
-            browseMoreHref="/archive/"
-          />
-        )} */}
+
       </Container>
     </div>
   );
@@ -272,7 +220,7 @@ const Inner = styled.div`
 const PageHeader = styled.div`
   display: grid;
   height: 500px;
-  background: url(${(props) => props.bg});
+  background: url(${(props) => props?.bg});
   background-position: bottom right;
   background-repeat: no-repeat;
   background-size: contain;
@@ -313,5 +261,40 @@ const Title = styled.div`
     font-weight: 600;
   }
 `;
+
+export const query = graphql`
+  query {
+    site: sanitySiteSettings(_id: { regex: "/(drafts.|)siteSettings/" }) {
+      title
+      description
+      keywords
+    }
+    allSite {
+      nodes {
+        siteMetadata {
+          menuLinks {
+            slug
+            name
+          }
+          siteUrl
+        }
+      }
+    }
+    header: file(relativePath: { eq: "headerImage3.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 2000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    wufaw: file(relativePath: { eq: "wufaw.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 800) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`
 
 export default IndexPage;

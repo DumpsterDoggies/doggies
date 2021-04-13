@@ -5,15 +5,17 @@ const {isFuture} = require('date-fns')
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-async function createProjectPages (graphql, actions) {
+async function createContentPages (graphql, actions) {
   const {createPage} = actions
-  const result = await graphql(`
+
+
+  // Creating Post Pages
+  const postResult = await graphql(`
     {
-      allSanitySampleProject(filter: {slug: {current: {ne: null}}, publishedAt: {ne: null}}) {
+      allSanityPost {
         edges {
           node {
             id
-            publishedAt
             slug {
               current
             }
@@ -22,26 +24,62 @@ async function createProjectPages (graphql, actions) {
       }
     }
   `)
+  
+  if (postResult.errors) throw postResult.errors
+  
+  const postEdges = (postResult.data.allSanityPost || {}).edges || []
+  
+  postEdges
+  .filter(edge => !isFuture(edge.publishedAt))
+  .forEach(edge => {
+    const id = edge.node.id
+    const slug = edge.node.slug.current
+    const path = `/post/${slug}/`
+    
+    createPage({
+      path,
+      component: require.resolve('./src/templates/post.tsx'),
+      context: {id}
+    })
+  })
+  
+  
+  
+  // Creating Dog Pages 
+  const dogResult = await graphql(`
+    {
+      allSanityDog {
+        edges {
+          node {
+            id
+            slug {
+              current
+            }
+          }
+        }
+      }
+    }
+  `)
+  if (dogResult.errors) throw dogResult.errors
 
-  if (result.errors) throw result.errors
-
-  const projectEdges = (result.data.allSanitySampleProject || {}).edges || []
-
-  projectEdges
-    .filter(edge => !isFuture(edge.node.publishedAt))
+  const dogEdges = (dogResult.data.allSanityDog || {}).edges || []
+  
+  dogEdges
+    .filter(edge => !isFuture(edge.publishedAt))
     .forEach(edge => {
       const id = edge.node.id
       const slug = edge.node.slug.current
-      const path = `/project/${slug}/`
+      const path = `/dog/${slug}/`
 
       createPage({
         path,
-        component: require.resolve('./src/templates/project.tsx'),
+        component: require.resolve('./src/templates/dog.tsx'),
         context: {id}
       })
     })
-}
+  }
+  
 
 exports.createPages = async ({graphql, actions}) => {
-  await createProjectPages(graphql, actions)
+  await createContentPages(graphql, actions)
 }
