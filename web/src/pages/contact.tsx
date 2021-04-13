@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Container from '../components/Container'
 import ContactForm from '../components/ContactForm'
-import SEO from '../components/SEO'
+import SEO from '../components/Seo'
 
 const Contact = ({ data }) => {
   

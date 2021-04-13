@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { graphql } from 'gatsby'
-import SEO from '../components/SEO'
+import SEO from '../components/Seo'
 import Button from '../components/ui/Button'
 import TextField from '@material-ui/core/TextField'
 import Container from '../components/Container'

@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { graphql } from 'gatsby'
-import SEO from '../components/SEO'
+import SEO from '../components/Seo'
 import { ButtonAni, ButtonIcon } from '../components/ui/Button'
 import Patreon from '../assets/icons/Patreon'
 import Container from '../components/Container'

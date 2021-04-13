@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import ButtonCards from '../components/ButtonCards'
 import Container from '../components/Container'
 import { graphql } from 'gatsby'
-import SEO from '../components/SEO'
+import SEO from '../components/Seo'
 import Volunteers from '../components/Volunteers'
 import Letter from '../components/Letter'
 

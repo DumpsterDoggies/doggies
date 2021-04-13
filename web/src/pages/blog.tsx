@@ -2,7 +2,7 @@ import { graphql } from 'gatsby'
 import React from 'react'
 import styled from 'styled-components'
 import PostsListing from '../components/post/PostsListing'
-import SEO from '../components/SEO'
+import SEO from '../components/Seo'
 
 const Blog = ({ data }) => {
   console.log(data)
