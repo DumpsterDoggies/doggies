@@ -5,16 +5,14 @@ import PostsListing from '../components/post/PostsListing'
 import SEO from '../components/Seo'
 
 const Blog = ({ data }) => {
-  console.log(data)
-  const { nodes } = data.allContentfulBlogPost
-  const { description } = data?.allSite?.nodes[0]?.siteMetadata
+
 
   return (
-    <Container nodeLength={nodes.length}>
-      <SEO title="Blog" description={description} />
-      {nodes.map((node, index) => (
+    <Container >
+      <SEO title="Blog"/>
+      {/* {nodes.map((node, index) => (
         <PostsListing node={node} key={index} />
-      ))}
+      ))} */}
     </Container>
   )
 }

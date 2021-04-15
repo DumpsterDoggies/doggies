@@ -4,49 +4,20 @@ export default {
   title: "Three Block",
   fields: [
     {
-      name: 'blockOneHeading',
-      type: 'string',
-      title: 'Block One Heading'
+      name: 'blockOne',
+      type: 'cardBlock',
+      title: 'Block One'
     },
     {
-      name: 'blockOneBody',
-      type: 'projectPortableText',
-      title: 'Block One Body'
+      name: 'blockTwo',
+      type: 'cardBlock',
+      title: 'Block Two '
     },
     {
-      name: 'blockOneButton',
-      type: 'callToAction',
-      title: 'Block One Button',
+      name: 'blockThree',
+      type: 'cardBlock',
+      title: 'Block Three '
     },
-    {
-      name: 'blockTwoHeading',
-      type: 'string',
-      title: 'Block Two Heading'
-    },
-    {
-      name: 'blockTwoBody',
-      type: 'projectPortableText',
-      title: 'Block Two Body'
-    },
-    {
-      name: 'blockTwoButton',
-      type: 'callToAction',
-      title: 'Block Two Button',
-    },
-    {
-      name: 'blockThreeHeading',
-      type: 'string',
-      title: 'Block Three Heading'
-    },
-    {
-      name: 'blockThreeBody',
-      type: 'projectPortableText',
-      title: 'Block Three Body'
-    },
-    {
-      name: 'blockThreeButton',
-      type: 'callToAction',
-      title: 'Block Three Button',
-    }
+    
   ]
 }

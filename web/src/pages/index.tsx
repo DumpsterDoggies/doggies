@@ -13,6 +13,7 @@ import GraphQLErrorList from "../components/graphql-error-list";
 import Layout from "../components/Layout";
 import ButtonCards from "../components/ButtonCards";
 import SEO from "../components/Seo";
+import FullImage from "../components/ui/FullImage";
 
 const ButtonsData = [
   {
@@ -105,6 +106,7 @@ const IndexPage = (props) => {
               <h6>We facilitate adoptions.</h6>
             </Li>
           </List>
+          <FullImage fluid={data?.feeding?.childImageSharp?.fluid} alt="Feeding the dogs" height={45} />
           <ButtonCards data={ButtonsData} />
           <Wufaw>
             <h4>Our Partner</h4>
@@ -281,6 +283,13 @@ export const query = graphql`
       }
     }
     header: file(relativePath: { eq: "headerImage3.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 2000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    feeding: file(relativePath: { eq: "feeding.jpeg" }) {
       childImageSharp {
         fluid(maxWidth: 2000) {
           ...GatsbyImageSharpFluid

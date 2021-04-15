@@ -2,10 +2,15 @@ export default {
   
   // Setup a 'document' type to house the page builder field
   
-  name: "spenden",
+  name: "page",
   type: "document",
-  title: "Spenden",
+  title: "Page",
   fields: [
+    {
+      name:"name",
+      type:"string",
+      title:"Name"
+    },
     {
       name: 'content',
       type: 'array',

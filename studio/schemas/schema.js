@@ -21,6 +21,7 @@ import spendenThreeBlock from './objects/spendenThreeBlock'
 import spendenLetter from './objects/spendenLetter'
 import spenden from './documents/spenden'
 import callToAction from './objects/callToAction'
+import blockCard from './objects/blockCard'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -35,6 +36,7 @@ export default createSchema({
     figure,
     projectMember,
     projectPortableText,
+    blockCard,
     simplePortableText,
     callToAction,
     spendenImage,

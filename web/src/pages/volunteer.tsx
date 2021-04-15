@@ -5,8 +5,11 @@ import SEO from '../components/Seo'
 import Button from '../components/ui/Button'
 import TextField from '@material-ui/core/TextField'
 import FormModal from '../components/FormModal'
+import FullImage from '../components/ui/FullImage'
 
-const volunteer = () => {
+const volunteer = (props) => {
+  const { data } = props
+  
   const [formElements, setFormElements] = useState({
     fName: '',
     lName: '',
@@ -71,6 +74,8 @@ const volunteer = () => {
           <li>Any other way your unique talents could help us</li>
         </ul>
       </Enterence>
+
+      <FullImage fluid={data?.food?.childImageSharp?.fluid} alt="Food we can serve to the dogs" height={60}/>
 
       <Form
         name="volunteer"
@@ -216,6 +221,18 @@ const Enterence = styled.div`
   li {
     text-align: left;
     list-style: square;
+  }
+`
+
+export const query = graphql`
+  query {
+    food: file(relativePath: { eq: "food.jpeg" }) {
+      childImageSharp {
+        fluid(maxWidth: 2000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
   }
 `
 

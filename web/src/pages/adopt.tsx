@@ -12,6 +12,7 @@ import FormControl from '@material-ui/core/FormControl'
 import FormLabel from '@material-ui/core/FormLabel'
 import Letter from '../components/Letter'
 import FormModal from '../components/FormModal'
+import FullImage from '../components/ui/FullImage'
 
 const Adopt = ({ data }) => {
   const { title, description } = data.allSite.nodes[0].siteMetadata
@@ -106,6 +107,8 @@ const Adopt = ({ data }) => {
           website starting from September 2020
         </p>
       </Letter>
+
+      <FullImage fluid={data?.puppyOnStairs?.childImageSharp?.fluid} alt="lauren-kay-Z819bGz43B8-unsplash" height={60}/>
 
       <Form
         name="adopt"
@@ -301,6 +304,13 @@ export const query = graphql`
           description
 
           title
+        }
+      }
+    }
+    puppyOnStairs: file(relativePath: { eq: "puppyOnStairs.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 2000) {
+          ...GatsbyImageSharpFluid
         }
       }
     }

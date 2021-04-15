@@ -1,7 +1,7 @@
 export default {
-  name: "spendenLetter",
+  name: "cardBlock",
   type: "object",
-  title: "Letter",
+  title: "Card Block",
   fields: [
     {
       name: 'heading',
@@ -13,6 +13,10 @@ export default {
       type: 'projectPortableText',
       title: 'Body'
     },
-    
+    {
+      name: 'button',
+      type: 'callToAction',
+      title: 'Button',
+    }
   ]
 }

@@ -6,6 +6,7 @@ import { graphql } from 'gatsby'
 import SEO from '../components/Seo'
 import Volunteers from '../components/Volunteers'
 import Letter from '../components/Letter'
+import FullImage from '../components/ui/FullImage'
 
 const ButtonCardData = [
   {
@@ -25,6 +26,7 @@ const About = ({ data }) => {
   return (
     <Container>
       <SEO title="About" />
+      <FullImage fluid={data?.mommy?.childImageSharp?.fluid} alt="daniele-franchi-aZxAf95mtVU-unsplash" height={40}/>
       <Head>
         <Header>
           Dumpster Doggies is a non-profit charity that acts for stray dogs in
@@ -251,7 +253,13 @@ export const query = graphql`
       }
     }
   }
-    
+  mommy: file(relativePath: { eq: "mommy.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 2000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
   }
 `
 export default About
