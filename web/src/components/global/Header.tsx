@@ -32,15 +32,11 @@ const Header = () => {
 
 const Container = styled.header`
   display: grid;
-  background-color: var(--color-tertiaryBg20);
+  border-bottom: 1px solid var(--color-tertiaryBg20);
   backdrop-filter: blur(20px);
   z-index: 1000;
   position: relative;
   width: 100%;
-  a {
-    font-weight: 600;
-    font-size: 14px;
-  }
 `
 
 const NavButton = styled.div`

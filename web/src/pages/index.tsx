@@ -42,10 +42,7 @@ const IndexPage = (props) => {
         <GraphQLErrorList errors={errors} />
       </Layout>
     );
-  }
-
-  console.log(data);
-  
+  }  
 
   const site = (data || {}).site;
   // const projectNodes = (data || {}).projects
@@ -260,7 +257,7 @@ const Title = styled.div`
 
   h3 {
     font-size: 3rem;
-    font-weight: 600;
+    font-weight: 700;
   }
 `;
 
@@ -282,7 +279,7 @@ export const query = graphql`
         }
       }
     }
-    header: file(relativePath: { eq: "headerImage3.jpg" }) {
+    header: file(relativePath: { eq: "headerImage3.png" }) {
       childImageSharp {
         fluid(maxWidth: 2000) {
           ...GatsbyImageSharpFluid

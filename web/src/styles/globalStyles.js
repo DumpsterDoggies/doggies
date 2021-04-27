@@ -23,6 +23,7 @@ const GlobalStyle = createGlobalStyle`
   --color-fourth: hsla(35,100%,58%,100%);
   --color-greyBg: hsla(246, 26%, 98%,100%);
   --color-greyMid: hsla(24,22%,91%,100%);
+  --color-title: hsla(190,85%,15%,100%);
   --color-body: hsla(0,0%,40%,100%);
   --color-white: hsla(0,0%,100%,100%);
   --color-whiteBg70: hsla(0,0%,100%,70%);
@@ -246,6 +247,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: var(--font-header);
     line-height: 1.2;
     font-weight: 700;
+    color: var(--color-title);
   }
 
   h1{

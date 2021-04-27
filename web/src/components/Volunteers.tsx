@@ -5,7 +5,6 @@ import Img from 'gatsby-image'
 import BlockText from './block-text'
 
 const Volunteers = ({ data }) => {
-console.log(data);
 
   return (
     <Container>

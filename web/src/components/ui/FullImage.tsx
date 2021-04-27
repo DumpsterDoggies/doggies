@@ -9,9 +9,7 @@ interface Prop{
   height?: number
 }
 
-const FullImage = ({src, fluid, alt, height= 30 }:Prop) => {
-  console.log(height);
-  
+const FullImage = ({src, fluid, alt, height= 30 }:Prop) => {  
   return fluid ? <ImgS fluid={fluid} alt={alt} height={height} /> : <ImgReg src={src} alt={alt} height={height} />
 };
 

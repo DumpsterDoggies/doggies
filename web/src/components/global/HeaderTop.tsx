@@ -5,39 +5,39 @@ import { Link } from 'gatsby'
 const HeaderTop = ({ footer }:any) => (
   <Container footer={footer}>
     <Left footer={footer}>
-      <a
+      <Anchor
         href="https://www.patreon.com/dumpsterdoggies"
         target="_blank"
         rel="noopener"
       >
         Patreon
-      </a>
-      <a
+      </Anchor>
+      <Anchor
         href="https://www.youtube.com/channel/UCULAkdwbtCKa3FOPxbxQ71w/videos"
         target="_blank"
         rel="noopener"
       >
         Youtube
-      </a>
-      <a
+      </Anchor>
+      <Anchor
         href="https://www.instagram.com/sbht_lovesdogs_/"
         target="_blank"
         rel="noopener"
       >
         Instagram
-      </a>
-      <a
+      </Anchor>
+      <Anchor
         href="https://www.facebook.com/dumpsterdoggies/"
         target="_blank"
         rel="noopener"
       >
         Facebook
-      </a>
+      </Anchor>
     </Left>
     <Right footer={footer}>
-      <Link to="/sponsor" target="_blank" rel="noopener">
+      <AnchorLink to="/sponsor" target="_blank" rel="noopener">
         Donate
-      </Link>
+      </AnchorLink>
     </Right>
   </Container>
 )
@@ -45,14 +45,35 @@ const HeaderTop = ({ footer }:any) => (
 const Container = styled.div`
   display: ${props => (props.footer ? 'grid' : 'none')};
   grid-auto-flow: column;
-  padding: 16px 5vw;
+  padding: 8px 5vw;
   justify-content: space-between;
-  background-color: var(--color-secBg20);
+  background-color: var(--color-tertiaryBg20);
   justify-content: ${props => (props.footer ? 'end' : 'space-between')};
   width: 100%;
-
   @media screen and (min-width: 768px) {
     display: grid;
+  }
+`
+
+const Anchor = styled.a`
+  font-weight: ${props => (props.footer ? '600' : 'inherit')};
+  letter-spacing: 0.025rem;
+  font-size: 0.75rem;
+  box-shadow: 0 0 0 inset ${props => (props.footer ? `var(--color-primary60)`: `var(--color-white)`)};
+  transition: 300ms ease box-shadow;
+  &:hover {
+    box-shadow: 0 -0.15rem 0 inset ${props => (props.footer ? `var(--color-primary60)`: `var(--color-white)`)};
+  }
+  `
+
+const AnchorLink = styled.a`
+  font-weight: ${props => (props.footer ? '600' : 'inherit')};
+  letter-spacing: 0.025rem;
+  font-size: 0.75rem;
+  box-shadow: 0 0 0 inset ${props => (props.footer ? `var(--color-primary60)`: `var(--color-white)`)};
+  transition: 300ms ease box-shadow;
+  &:hover {
+    box-shadow: 0 -0.15rem 0 inset ${props => (props.footer ? `var(--color-primary60)`: `var(--color-white)`)};
   }
 `
 
@@ -61,10 +82,7 @@ const Left = styled.div`
   grid-auto-flow: column;
   gap: 24px;
   justify-content: ${props => (props.footer ? 'end' : 'start')};
-  a {
-    font-weight: ${props => (props.footer ? '600' : 'inherit')};
-    letter-spacing: 0.025rem;
-  }
+ 
 `
 
 const Right = styled.div`

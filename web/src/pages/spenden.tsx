@@ -11,7 +11,6 @@ import BlockContent from '../components/block-content'
 import FullImage from '../components/ui/FullImage'
 
 const Spenden = (props) => {
-  console.log(props);
   const letter = props.data.sanityPage._rawContent[2]
   const image = props.data.sanityPage.content[1]
   const threeBlock = props.data.sanityPage._rawContent[0]

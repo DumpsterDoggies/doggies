@@ -52,10 +52,12 @@ const Container = styled.div`
 
 const AniLinkS = styled(Link)`
   text-align: center;
-  box-shadow: 0 0 0 inset var(--color-primary60);
-  transition: 300ms ease box-shadow;
   padding: var(--borderRadius) 0.25rem;
   width: fit-content;
+  font-weight: 600;
+  font-size: 14px;
+  box-shadow: 0 0 0 inset var(--color-primary60);
+  transition: 300ms ease box-shadow;
   &:hover {
     box-shadow: 0 -0.25rem 0 inset var(--color-primary60);
   }
