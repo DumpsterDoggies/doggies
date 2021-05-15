@@ -12,7 +12,7 @@ const isProd = process.env.NODE_ENV === 'production'
 module.exports = {
   siteMetadata: {
     siteUrl: 'https://dumpsterdoggies.com/',
-    image: '/src/assets/images/favicon.svg',
+    image: '/src/assets/images/ddfavicon.svg',
     menuLinks: [
       {
         name: 'Home',

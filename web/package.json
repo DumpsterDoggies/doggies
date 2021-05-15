@@ -1,8 +1,8 @@
 {
   "private": true,
-  "name": "sanity-gatsby-portfolio-web",
+  "name": "dumpster-doggies",
   "version": "1.0.3",
-  "author": "Sanity <hello@sanity.io>",
+  "author": "artticfox <white@artticfox.com",
   "scripts": {
     "build": "gatsby build",
     "clean-cache": "gatsby clean",

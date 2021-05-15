@@ -9,7 +9,7 @@ import FullImage from '../components/ui/FullImage'
 
 const volunteer = (props) => {
   const { data } = props
-  
+
   const [formElements, setFormElements] = useState({
     fName: '',
     lName: '',
@@ -67,15 +67,16 @@ const volunteer = (props) => {
           for:
         </h6>
         <ul>
-          <li>Online help to help with our online accounts</li>
-          <li>Flight volunteers</li>
 
-          <li>In person help in shelter</li>
+          <li>Online help to help with our online accounts</li>
+          <li>Online help to process our many photos and videos showing our efforts and animals</li>
+          <li>Flight volunteers in the USA and Canada and Europe</li>
+          <li>In person help in shelter (We can help organize accommodations. Come visit us.)</li>
           <li>Any other way your unique talents could help us</li>
         </ul>
       </Enterence>
 
-      <FullImage fluid={data?.food?.childImageSharp?.fluid} alt="Food we can serve to the dogs" height={60}/>
+      <FullImage fluid={data?.food?.childImageSharp?.fluid} alt="Food we can serve to the dogs" height={60} />
 
       <Form
         name="volunteer"

@@ -10,14 +10,14 @@ import FullImage from '../components/ui/FullImage'
 
 const ButtonCardData = [
   {
-    title: 'Become a Volunteer',
-    p: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit.',
-    to: '/volunteer/',
+    title: "Become Our Volunteer",
+    p: "We always need volunteers to help in our shelter and online.",
+    to: "/volunteer/",
   },
   {
-    title: 'Sponsor a Doggie',
-    p: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit.',
-    to: '/sponsor/',
+    title: "Sponsor a Doggie",
+    p: "We are always looking for sponsors for the physically disabled and sick doggies that we are taking care of in our shelter.",
+    to: "/sponsor/",
   },
 ]
 

@@ -19,13 +19,13 @@ export default {
               sites: [
                 {
                   buildHookId: '606bda25fe0d73934cc85cf1',
-                  title: 'Sanity Studio',
+                  title: 'Doggies Studio',
                   name: 'doggies-studio',
                   apiId: 'fb7c30b7-376f-4d47-a4a0-df0fa8f6a128'
                 },
                 {
                   buildHookId: '606bda25a14683a77d77346a',
-                  title: 'Portfolio Website',
+                  title: 'Doggies Website',
                   name: 'doggies-web-9zx7bbvq',
                   apiId: '33eb2377-240b-40d9-b58e-c792958e33a8'
                 }

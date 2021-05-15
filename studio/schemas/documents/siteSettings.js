@@ -18,13 +18,13 @@ export default {
       name: 'description',
       type: 'text',
       title: 'Description',
-      description: 'Describe your portfolio for search engines and social media.'
+      description: 'We are a small group of volunteers 100% powered by small donations from people like you, dedicated to improving lives of stray dogs in Turkey. 100% of the donations go to the dogs. We are also looking for digital volunteers and in person.'
     },
     {
       name: 'keywords',
       type: 'array',
       title: 'Keywords',
-      description: 'Add keywords that describes your portfolio.',
+      description: 'stray dogs, dumpster doggies, adoption, spayed, neutered',
       of: [{type: 'string'}],
       options: {
         layout: 'tags'

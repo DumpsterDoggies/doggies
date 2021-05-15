@@ -104,7 +104,7 @@ const Adopt = ({ data }) => {
           We were able to send 41 doggies to the US, Canada, UK, and Belgium by
           now. Among them, there are 7 tripods, 3 blind doggies.Also, we’ll
           start to put our doggies that are available for adoption on our
-          website starting from September 2020
+          website starting from September 2021
         </p>
       </Letter>
 

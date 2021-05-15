@@ -17,18 +17,18 @@ import FullImage from "../components/ui/FullImage";
 
 const ButtonsData = [
   {
-    title: "Become Out Volunteer",
-    p: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+    title: "Become Our Volunteer",
+    p: "We always need volunteers to help in our shelter and online.",
     to: "/volunteer/",
   },
   {
-    title: "Sponsor A Doggie",
-    p: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+    title: "Sponsor a Doggie",
+    p: "We are always looking for sponsors for the physically disabled and sick doggies that we are taking care of in our shelter.",
     to: "/sponsor/",
   },
   {
     title: "Prevent Suffering",
-    p: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+    p: "We require continuous support on our spay and neuter campaigns for us to battle unplanned population growth of stray population.",
     href: "https://www.gofundme.com/f/4hhpx-dumpster-doggies-ending-cycle-of-suffering",
   },
 ];
@@ -82,25 +82,25 @@ const IndexPage = (props) => {
               <Number>
                 <Inner>01.</Inner>
               </Number>
-              <h6>We bring water and food to the dogs in their feeding areas.</h6>
+              <h6>We continuously bring water and food to the dogs in their feeding areas.</h6>
             </Li>
             <Li>
               <Number>
                 <Inner>02.</Inner>
               </Number>
-              <h6>We capture, spay or neuter, and release them.</h6>
+              <h6>We capture, spay or neuter, and release dogs and cats.</h6>
             </Li>
             <Li>
               <Number>
                 <Inner>03.</Inner>
               </Number>
-              <h6>We keep and heal the sick ones in our emergency shelter.</h6>
+              <h6>We keep and heal the sick and disable dogs in our emergency shelter.</h6>
             </Li>
             <Li>
               <Number>
                 <Inner>04.</Inner>
               </Number>
-              <h6>We facilitate adoptions.</h6>
+              <h6>We facilitate adoptions internationally.</h6>
             </Li>
           </List>
           <FullImage fluid={data?.feeding?.childImageSharp?.fluid} alt="Feeding the dogs" height={45} />

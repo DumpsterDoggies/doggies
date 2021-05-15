@@ -20,11 +20,7 @@ const Sponsor = ({ data }) => {
           contribution matters.
         </p>
         <p>
-          Please check out our Patreon for monthly support. We love Patreon as
-          it allows us to plan for our expenses. We are funded, or as we like to
-          say powered by your donations, so having monthly support coming via
-          Patreon helps lower are financial stress levels by a lot! Thank you so
-          much for that! Every bit counts.
+        Please check out our Patreon for monthly support. We love Patreon as it allows us to plan for our expenses. In the past we went through a great deal of financial stress where we didn't know if we'll have enough food for the dogs. Patreon relieves a great deal of that stress. Thank you so much for that! Every bit counts.
         </p>
         <Buttons>
           <ButtonIcon href="https://www.patreon.com/dumpsterdoggies">
