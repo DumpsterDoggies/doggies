@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 const HeaderTop = ({ footer }:any) => (
   <Container footer={footer}>
@@ -35,7 +36,7 @@ const HeaderTop = ({ footer }:any) => (
       </Anchor>
     </Left>
     <Right footer={footer}>
-      <AnchorLink to="/sponsor" target="_blank" rel="noopener">
+      <AnchorLink paintDrip hex="166879" duration={0.5} to="/sponsor" >
         Donate
       </AnchorLink>
     </Right>
@@ -66,7 +67,7 @@ const Anchor = styled.a`
   }
   `
 
-const AnchorLink = styled.a`
+const AnchorLink = styled(AniLink)`
   font-weight: ${props => (props.footer ? '600' : 'inherit')};
   letter-spacing: 0.025rem;
   font-size: 0.75rem;

@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { Link } from 'gatsby'
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 const Nav = ({ display, onClick }) => {
   const links = [
@@ -17,7 +18,7 @@ const Nav = ({ display, onClick }) => {
   return (
     <Container display={display}>
       {links.map((item, index) => (
-        <AniLinkS to={item.to} onClick={onClick} key={index}>
+        <AniLinkS paintDrip hex="166879" duration={0.5} to={item.to} onClick={onClick} key={index}>
           {item.name}
         </AniLinkS>
       ))}
@@ -50,7 +51,7 @@ const Container = styled.div`
   }
 `
 
-const AniLinkS = styled(Link)`
+const AniLinkS = styled(AniLink)`
   text-align: center;
   padding: var(--borderRadius) 0.25rem;
   width: fit-content;

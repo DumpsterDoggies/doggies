@@ -12,7 +12,7 @@ const isProd = process.env.NODE_ENV === 'production'
 module.exports = {
   siteMetadata: {
     siteUrl: 'https://dumpsterdoggies.com/',
-    image: '/src/assets/images/ddfavicon.svg',
+    image: './src/assets/images/favicon.svg',
     menuLinks: [
       {
         name: 'Home',
@@ -61,6 +61,23 @@ module.exports = {
       options: {
         layout: require.resolve(`./src/components/Layout.tsx`),
       },
+    },
+    {
+      resolve: 'gatsby-plugin-favicons',
+      options: {
+        logo: './src/assets/images/favicon.svg',
+        appName: 'Dumpster Doggies',
+        background: '#fff',
+        icons: {
+          android: true,
+          appleIcon: true,
+          appleStartup: true,
+          coast: false,
+          favicons: true,
+          yandex: false,
+          windows: false
+        }
+      }
     },
     {
       resolve: `gatsby-source-filesystem`,

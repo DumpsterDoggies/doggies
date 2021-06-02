@@ -6,6 +6,7 @@ import Logo from '../../assets/Logo'
 
 import { Menu, X } from 'react-feather'
 import { Link } from 'gatsby'
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 const Header = () => {
   const [displayNav, setDisplayNav] = useState(false)
@@ -18,7 +19,7 @@ const Header = () => {
     <Container>
       <HeaderTop />
       <Bottom>
-        <LogoS to="/" onClick={() => handleClick(false)}>
+        <LogoS paintDrip hex="166879" duration={0.5} to="/" onClick={() => handleClick(false)}>
           <Logo />
         </LogoS>
         <Nav display={displayNav ? 1 : 0} onClick={handleClick} />
@@ -59,7 +60,7 @@ const Bottom = styled.div`
   }
 `
 
-const LogoS = styled(Link)`
+const LogoS = styled(AniLink)`
   display: grid;
   width: 100%;
 `
