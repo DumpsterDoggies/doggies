@@ -2,6 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import styled from "styled-components";
 import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image"
 
 // import {
 //   mapEdgesToNodes,
@@ -56,13 +57,14 @@ const IndexPage = (props) => {
       'Missing "Site settings". Open the studio at http://localhost:3333 and add some content to "Site settings" and restart the development server.'
     );
   }
+console.log(data?.header?.childImageSharp);
 
   return (
     <div>
       <SEO title={site.title} description={site.description}  />
       <Container>
         <PageHeader 
-        bg={data?.header?.childImageSharp?.gatsbyImageData.src}
+        bg={data?.header?.childImageSharp?.gatsbyImageData.images.fallback.src}
         >
           <Title>
             <h3>Join Us</h3>
@@ -134,7 +136,7 @@ const Wufaw = styled.div`
   display: grid;
   gap: 2rem;
 `;
-const ImgS = styled(Img)`
+const ImgS = styled(GatsbyImage)`
   display: grid;
   width: 200px;
   height: fit-content;
