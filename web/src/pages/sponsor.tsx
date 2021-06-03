@@ -34,7 +34,7 @@ const Sponsor = ({ data }) => {
       <Donation>
         <ButtonAni to="/spenden ">Spenden</ButtonAni>
       </Donation>
-      <FullImage fluid={data?.threePups?.childImageSharp?.fluid} alt="anoir-chafik-2_3c4dIFYFU-unsplash" height={40}/>
+      <FullImage image={data?.threePups?.childImageSharp?.gatsbyImageData} alt="anoir-chafik-2_3c4dIFYFU-unsplash" height={40}/>
     </Container>
   )
 }
@@ -67,9 +67,7 @@ export const query = graphql`
   query {
     threePups: file(relativePath: { eq: "threePups.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 2000) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
       }
     }
   }

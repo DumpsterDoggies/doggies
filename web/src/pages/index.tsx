@@ -62,7 +62,7 @@ const IndexPage = (props) => {
       <SEO title={site.title} description={site.description}  />
       <Container>
         <PageHeader 
-        bg={data?.header?.childImageSharp?.fluid.src}
+        bg={data?.header?.childImageSharp?.gatsbyImageData.src}
         >
           <Title>
             <h3>Join Us</h3>
@@ -103,12 +103,12 @@ const IndexPage = (props) => {
               <h6>We facilitate adoptions internationally.</h6>
             </Li>
           </List>
-          <FullImage fluid={data?.feeding?.childImageSharp?.fluid} alt="Feeding the dogs" height={45} />
+          <FullImage image={data?.feeding?.childImageSharp?.gatsbyImageData} alt="Feeding the dogs" height={45} />
           <ButtonCards data={ButtonsData} />
           <Wufaw>
             <h4>Our Partner</h4>
             <Bottom>
-              <ImgS fluid={data?.wufaw?.childImageSharp?.fluid} />
+              <ImgS image={data?.wufaw?.childImageSharp?.gatsbyImageData} />
               <Text>
                 <p>
                   We are a global foundation focused on improving animal welfare locally and abroad
@@ -281,23 +281,17 @@ export const query = graphql`
     }
     header: file(relativePath: { eq: "headerImage3.png" }) {
       childImageSharp {
-        fluid(maxWidth: 2000) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
       }
     }
     feeding: file(relativePath: { eq: "feeding.jpeg" }) {
       childImageSharp {
-        fluid(maxWidth: 2000) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
       }
     }
     wufaw: file(relativePath: { eq: "wufaw.png" }) {
       childImageSharp {
-        fluid(maxWidth: 800) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
       }
     }
   }

@@ -53,6 +53,7 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-sharp',
+    `gatsby-plugin-image`,
     'gatsby-transformer-sharp',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
@@ -62,23 +63,7 @@ module.exports = {
         layout: require.resolve(`./src/components/Layout.tsx`),
       },
     },
-    {
-      resolve: 'gatsby-plugin-favicons',
-      options: {
-        logo: './src/assets/images/favicon.svg',
-        appName: 'Dumpster Doggies',
-        background: '#fff',
-        icons: {
-          android: true,
-          appleIcon: true,
-          appleStartup: true,
-          coast: false,
-          favicons: true,
-          yandex: false,
-          windows: false
-        }
-      }
-    },
+    
     {
       resolve: `gatsby-source-filesystem`,
       options: {

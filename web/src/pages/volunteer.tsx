@@ -76,7 +76,7 @@ const volunteer = (props) => {
         </ul>
       </Enterence>
 
-      <FullImage fluid={data?.food?.childImageSharp?.fluid} alt="Food we can serve to the dogs" height={60} />
+      <FullImage image={data?.food?.childImageSharp?.gatsbyImageData} alt="Food we can serve to the dogs" height={60} />
 
       <Form
         name="volunteer"
@@ -229,9 +229,7 @@ export const query = graphql`
   query {
     food: file(relativePath: { eq: "food.jpeg" }) {
       childImageSharp {
-        fluid(maxWidth: 2000) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
       }
     }
   }

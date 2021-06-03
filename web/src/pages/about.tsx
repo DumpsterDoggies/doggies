@@ -26,7 +26,7 @@ const About = ({ data }) => {
   return (
     <Container>
       <SEO title="About" />
-      <FullImage fluid={data?.mommy?.childImageSharp?.fluid} alt="daniele-franchi-aZxAf95mtVU-unsplash" height={40}/>
+      <FullImage image={data?.mommy?.childImageSharp?.gatsbyImageData} alt="daniele-franchi-aZxAf95mtVU-unsplash" height={40}/>
       <Head>
         <Header>
           Dumpster Doggies is a non-profit charity that acts for stray dogs in
@@ -255,9 +255,7 @@ export const query = graphql`
   }
   mommy: file(relativePath: { eq: "mommy.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 2000) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
       }
     }
   }

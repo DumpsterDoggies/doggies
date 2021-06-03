@@ -37,7 +37,7 @@ const SEO = ({ title, description }:SEOProp) => {
       }}
       title={title}
       defaultTitle={siteTitle}
-      titleTemplate={`%s | ${metaDescription}`}
+      titleTemplate={`%s | ${siteTitle}`}
     >
 
       <link rel="preconnect" href="https://fonts.gstatic.com"/>

@@ -8,7 +8,7 @@ const PostsListing = ({ node }: any) => {
   return (
     <Link to={`/blog/${node.slug}`}>
       <Card>
-        <Img bg={node.heroImage.fluid.src} />
+        <Img bg={node.heroImage.gatsbyImageData.src} />
         <h5>{node.title}</h5>
         <p>{node.description.description}</p>
         <PostDetails

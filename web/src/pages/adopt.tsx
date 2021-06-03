@@ -108,7 +108,7 @@ const Adopt = ({ data }) => {
         </p>
       </Letter>
 
-      <FullImage fluid={data?.puppyOnStairs?.childImageSharp?.fluid} alt="lauren-kay-Z819bGz43B8-unsplash" height={60}/>
+      <FullImage image={data?.puppyOnStairs?.childImageSharp?.gatsbyImageData} alt="lauren-kay-Z819bGz43B8-unsplash" height={40}/>
 
       <Form
         name="adopt"
@@ -309,9 +309,7 @@ export const query = graphql`
     }
     puppyOnStairs: file(relativePath: { eq: "puppyOnStairs.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 2000) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: FULL_WIDTH)
       }
     }
   }

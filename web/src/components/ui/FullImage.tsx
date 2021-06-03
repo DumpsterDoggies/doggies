@@ -1,16 +1,17 @@
 import React from "react";
 import styled from "styled-components";
 import Img from 'gatsby-image';
+import { GatsbyImage } from "gatsby-plugin-image"
 
 interface Prop{
   src?: string,
-  fluid?: string,
+  image?: string,
   alt: string,
   height?: number
 }
 
-const FullImage = ({src, fluid, alt, height= 30 }:Prop) => {  
-  return fluid ? <ImgS fluid={fluid} alt={alt} height={height} /> : <ImgReg src={src} alt={alt} height={height} />
+const FullImage = ({src, image, alt, height= 30 }:Prop) => {  
+  return image ? <ImgS image={image} alt={alt} height={height} /> : <ImgReg src={src} alt={alt} height={height} />
 };
 
 
@@ -26,7 +27,7 @@ const ImgReg = styled.img`
   }
 `
 
-const ImgS = styled(Img)`
+const ImgS = styled(GatsbyImage)`
   display: grid;
   height: ${props => `${props.height}vh`};
   width: 100%;
