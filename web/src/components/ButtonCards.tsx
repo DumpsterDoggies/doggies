@@ -25,7 +25,7 @@ const ButtonCards = ({ data }) => {
             <a href={item.href} rel="noopenner" key={index}>
               <Box>
                 <Left>
-                  <h4>{item.title}</h4>
+                  <h3>{item.title}</h3>
                   <p>{item.p}</p>
                 </Left>
                 <ArrowRight />
